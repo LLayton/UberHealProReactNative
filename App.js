@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import "react-native-gesture-handler";
+import React from "react";
+import { NativeBaseProvider, Box, Button } from "native-base";
+import {  registerWithEmailAndPassword } from "./src/firebase";
 
 export default function App() {
+  const handleSingup = () => {
+    registerWithEmailAndPassword("lyes.souifiiii@gmail.com","1234567891")
+  };
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider>
+      <Box alignItems="center" style={{margin:50}}>
+        <Button onPress={() => handleSingup()}>Click Me</Button>
+      </Box>
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
