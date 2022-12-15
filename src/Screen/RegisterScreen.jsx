@@ -10,13 +10,12 @@ import {
   HStack,
   Input,
   Heading,
-  Link,
-  Text,
+
 } from "native-base";
 //import { auth, logInWithEmailAndPassword } from "../firebase";
 import { Entypo } from '@expo/vector-icons'; 
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }) => {
   return (
     <Center w="100%">
       <Box safeArea p="2" py="8" w="90%" maxW="290">
@@ -28,7 +27,7 @@ const RegisterScreen = () => {
             color: "warmGray.50",
           }}
         >
-        <Entypo name="cross" size={24} color="black" />          Uberheal
+        <Entypo onPress={()=>{navigation.pop()}} name="cross" size={24} color="black" />          Uberheal
         </Heading>
         <Heading
           mt="1"
